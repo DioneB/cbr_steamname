@@ -1,26 +1,20 @@
 AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
 	deferrals.defer()
-	
 	local _source = source
-	
-
+		
 	deferrals.update('Validando seu Nickname da Steam . . .')
-	
-
 	Citizen.Wait(100)
 	
 	local playerName = GetPlayerName(_source)
 	local allowed    = true
 	local reason     = nil
 	
-
 	if playerName == nil then
 		playerName = 'unknown'
 		reason = 'nome do jogador desconhecido, aguarde até tentar se conectar novamente'
 		allowed = false
 	end
 	
-
 	local nameLength = string.len(playerName)
 
 	local count = 0
